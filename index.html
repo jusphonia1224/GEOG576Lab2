@@ -40,8 +40,8 @@
       // Define geometry
       const point = { //Create a point  
         type: "point",  
-        longitude: 127.1163451,    //long lat of SK Olympic Handball Stadium in Korea
-        latitude: 37.5173552
+        longitude: 127.1262224,    //long lat of SK Olympic Handball Stadium in Korea
+        latitude: 37.5173557
       };
       
       // Define marker style
@@ -54,7 +54,6 @@
           width: 1
         }  
       };
-
       
       // Pop up
       const popupTemplate = {
@@ -77,6 +76,59 @@
 
       // Add point to layer
       graphicsLayer.add(pointGraphic);
+
+      
+      // Create polyline
+      const polyline = {
+        type: "polyline", // autocasts as new Polyline()
+        paths: [
+          [127.1275107, 37.5147044],
+          [127.1262224, 37.5173557]
+        ]
+      };
+
+      // Create a symbol for drawing the line
+      const lineSymbol = {
+        type: "simple-line", // autocasts as SimpleLineSymbol()
+        color: [226, 119, 40],
+        width: 4
+      };
+
+      // Create an object for storing attributes related to the line
+      const lineAtt = {
+        Name: "Venues in Olympic Park"
+      };
+
+      const polylineGraphic = new Graphic({
+        geometry: polyline,
+        symbol: lineSymbol,
+        attributes: lineAtt,
+        popupTemplate: {
+          // autocasts as new PopupTemplate()
+          title: "{Name}",
+          content: [
+            {
+              type: "fields",
+              fieldInfos: [
+                {
+                  fieldName: "Name"
+                },
+                {
+                  fieldName: "Owner"
+                },
+                {
+                  fieldName: "Length"
+                }
+              ]
+            }
+          ]
+        }
+      });
+
+      // Add point to layer
+      graphicsLayer.add(pointGraphic);
+      graphicsLayer.add(polylineGraphic);
+
     });
   </script>
 
