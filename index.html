@@ -145,8 +145,11 @@
       graphicsLayer.add(polygonGraphic);
 
       const usaeduLayer = new FeatureLayer({
-        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/KOR_Boundaries_2022/FeatureServer"
+        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/KOR_Boundaries_2022/FeatureServer",
+        //outFields: ["NAME","TOT_ENROLL"],
+        popupTemplate: popupTemplate
       });
+      
       map.add(usaeduLayer);
     });
   </script>
