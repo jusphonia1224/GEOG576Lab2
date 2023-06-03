@@ -13,11 +13,13 @@
   <!-- Adding the modules, API key, and map constant needed for a full screen map app -->
   <script>
   
-    require([
-     "esri/config",
-      "esri/Map",
-      "esri/views/MapView"
-    ], function (esriConfig,Map, MapView) {
+  require([  
+    "esri/config",  
+    "esri/Map",  
+    "esri/views/MapView",   
+    "esri/Graphic",  
+    "esri/layers/GraphicsLayer"   
+    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
 
       esriConfig.apiKey = "AAPK1bafb1fd1b984000a2a5ab965ed0cf111GDugMmnipDNIQH9yaN93addT3iTZzAKwGLSLBZvZJBkFTaRPkJjvEi2gCoqyJml";
       const map = new Map({
@@ -29,7 +31,36 @@
           center: [-97.7431, 30.2672], // Longitude, latitude
           zoom: 13, // Zoom level
           container: "viewDiv" // Div element
-        });
+      });
+
+      // Add for graphics layer
+      const graphicsLayer = new GraphicsLayer();  
+      map.add(graphicsLayer);
+
+      // Define geometry
+      const point = { //Create a point  
+        type: "point",  
+        longitude: 127.1168656,    //long lat of SK Olympic Handball Stadium in Korea
+        latitude: 37.5175708
+      };
+      
+      // Define marker style
+      const simpleMarkerSymbol = {  
+        type: "simple-marker",  
+        [0, 0, 139],  // Color of blues rock
+        outline: {  
+        color: [255, 255, 255], // White  
+        width: 1  }  
+      };
+
+      // Create point
+      const pointGraphic = new Graphic({  
+        geometry: point,  
+        symbol: simpleMarkerSymbol  
+      });
+
+      // Add point to layer
+      graphicsLayer.add(pointGraphic);
     });
   </script>
 
