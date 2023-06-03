@@ -95,28 +95,17 @@
       };
 
       // Create an object for storing attributes related to the line
-      const lineAtt = {
-        Name: "Venues in Olympic Park"
+      const lineAttributes = {
+        Name: "Olympic Park",
+        Description: "Concert venues in Olympic Park"
       };
 
       const polylineGraphic = new Graphic({
         geometry: polyline,
         symbol: lineSymbol,
         attributes: lineAtt,
-        popupTemplate: {
-          // autocasts as new PopupTemplate()
-          title: "{Name}",
-          content: [
-            {
-              type: "fields",
-              fieldInfos: [
-                {
-                  fieldName: "Name"
-                }
-              ]
-            }
-          ]
-        }
+        popupTemplate: popupTemplate,
+        attributes: lineAttributes
       });
 
       // Add point to layer
