@@ -18,8 +18,9 @@
     "esri/Map",  
     "esri/views/MapView",   
     "esri/Graphic",  
-    "esri/layers/GraphicsLayer"   
-    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
+    "esri/layers/GraphicsLayer",
+    "esri/layers/FeatureLayer"   
+    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer, FeatureLayer) {
 
       esriConfig.apiKey = "AAPK1bafb1fd1b984000a2a5ab965ed0cf111GDugMmnipDNIQH9yaN93addT3iTZzAKwGLSLBZvZJBkFTaRPkJjvEi2gCoqyJml";
       const map = new Map({
@@ -143,6 +144,10 @@
 
       graphicsLayer.add(polygonGraphic);
 
+      const usaeduLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/KOR_Boundaries_2022/FeatureServer"
+      });
+      map.add(usaeduLayer);
     });
   </script>
 
