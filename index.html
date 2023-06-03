@@ -107,40 +107,10 @@
         attributes: lineAttributes
       });
 
-      // Create a polygon geometry
-      const polygon = {
-        type: "polygon", // autocasts as new Polygon()
-        rings: [
-          [127.131323, 37.517287],
-          [127.127868, 37.512283],
-          [127.113148, 37.517798],
-          [127.119150, 37.527735],
-          [127.127735, 37.523903],
-          [127.131323, 37.517287]
-        ]
-      };
-
-      // Create a symbol for rendering the graphic
-      const fillSymbol = {
-        type: "simple-fill", // autocasts as new SimpleFillSymbol()
-        color: [227, 139, 79, 0.8],
-        outline: {
-          // autocasts as new SimpleLineSymbol()
-          color: [255, 255, 255],
-          width: 1
-        }
-      };
-
-      // Add the geometry and symbol to a new graphic
-      const polygonGraphic = new Graphic({
-        geometry: polygon,
-        symbol: fillSymbol
-      });
-
       // Add to graphics layer
       graphicsLayer.add(pointGraphic);
       graphicsLayer.add(polylineGraphic);
-      graphicsLayer.add(polygonGraphic);
+      //graphicsLayer.add(polygonGraphic);
 
     });
   </script>
