@@ -18,8 +18,9 @@
     "esri/Map",  
     "esri/views/MapView",   
     "esri/Graphic",  
-    "esri/layers/GraphicsLayer"   
-    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer) {
+    "esri/layers/GraphicsLayer",
+    "esri/symbols/SimpleMarkerSymbol"   
+    ], function(esriConfig,Map, MapView, Graphic, GraphicsLayer, SimpleMarkerSymbol) {
 
       esriConfig.apiKey = "AAPK1bafb1fd1b984000a2a5ab965ed0cf111GDugMmnipDNIQH9yaN93addT3iTZzAKwGLSLBZvZJBkFTaRPkJjvEi2gCoqyJml";
       const map = new Map({
@@ -46,11 +47,13 @@
       
       // Define marker style
       const simpleMarkerSymbol = {  
-        type: "cross",  
+        type: "simple-marker",
+        style: "square",  
         color: [0, 0, 139],  // Color of blues rock
         outline: {  
-        color: [255, 255, 255], // White  
-        width: 1  }  
+          color: [255, 255, 255], // White  
+          width: 1
+        }  
       };
 
       // Create point
