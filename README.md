@@ -1,2 +1,1 @@
-# esrijs
-My first Esri JS Map
+# GEOG576 Lab 2
