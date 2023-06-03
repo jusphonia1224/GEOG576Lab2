@@ -144,8 +144,13 @@
 
       graphicsLayer.add(polygonGraphic);
 
+      const popupEduusa = {
+        "title": "EDUs",
+        "content": "<b>Name:</b> {NAME}<br><b>Total Enrollment:</b> {TOT_ENROLL}<br>"
+      }
+
       const usaeduLayer = new FeatureLayer({
-        url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Colleges_and_Universities_View/FeatureServer",
+        url: "https://services3.arcgis.com/6j1KwZfY2fZrfNMR/arcgis/rest/services/Hong_Kong_18_Districts/FeatureServer",
         outFields: ["NAME","TOT_ENROLL"],
         popupTemplate: popupTemplate
       });
