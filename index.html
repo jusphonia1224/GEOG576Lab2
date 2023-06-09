@@ -134,10 +134,17 @@
         }
       };
 
+      // Create an object for storing attributes related to the polygon
+      const polygonAttributes = {
+        Name: "Geography Department",
+        Description: "GISPP hosting department"
+      };
+
       // Add the geometry and symbol to a new graphic
       const polygonGraphic = new Graphic({
         geometry: polygon,
-        symbol: fillSymbol
+        symbol: fillSymbol,
+        attributes: polygonAttributes
       });
 
       graphicsLayer.add(polygonGraphic);
