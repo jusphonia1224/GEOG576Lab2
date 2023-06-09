@@ -152,12 +152,12 @@
 
       const popupEduusa = {
         title: "EDUs",
-        content: "<b>Name:</b> {NAME}<br><b>Total Enrollment:</b> {TOT_ENROLL}<br><b> Website: </b><a href=\"{WEBSITE}\" target=\"_blank\">website</a><br>"
+        content: "<b>Name:</b> {NAME}<br><b>Total Enrollment:</b> {TOT_ENROLL}<br>"
       }
 
       const usaeduLayer = new FeatureLayer({
         url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Colleges_and_Universities_View/FeatureServer",
-        outFields: ["NAME","TOT_ENROLL","WEBSITE"],
+        outFields: ["NAME","TOT_ENROLL"],
         popupTemplate: popupEduusa
       });
       
