@@ -162,6 +162,19 @@
       });
       
       map.add(usaeduLayer);
+
+      const popupAirportusa = {
+        "title": "Fac_Name",
+        "content": "<b>Name:</b> {NAME}<br><b>Region Code:</b> {Region_Cod}<br>"
+      }
+
+      const usaairportLayer = new FeatureLayer({
+        url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_lab2/FeatureServer",
+        outFields: ["Fac_Name","Region_Cod"],
+        popupTemplate: popupAirportusa
+      });
+      
+      map.add(usaairportLayer);
     });
   </script>
 
