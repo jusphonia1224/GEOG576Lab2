@@ -165,7 +165,7 @@
 
       const popupAirportusa = {
         title: "{Site_Num}",
-        content: "<b>Name:</b> {State_Name}<br><b>Region Code:</b> {Region_Cod}<br>"
+        content: "<b>Name:</b> {Fac_Name}<br><b>Region Code:</b> {Region_Cod}<br>"
       }
 
       const airportRenderer = {
@@ -180,7 +180,7 @@
 
       const usaairportLayer = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_lab2/FeatureServer",
-        outFields: ["Site_Num", "State_Name","Region_Cod"],
+        outFields: ["Site_Num", "Fac_Name","Region_Cod"],
         popupTemplate: popupAirportusa,
         renderer: airportRenderer
       });
