@@ -178,12 +178,33 @@
         }
       }
 
+      //const to make the airport labels
+      const airportLabels = {
+        symbol: {
+          type: "text",
+          color: "#FFFFFF",
+          haloColor: "#5E8D74",
+          haloSize: "2px",
+          font: {
+            size: "12px",
+            family: "Noto Sans",
+            style: "italic",
+            weight: "normal"
+          }
+        },
+        labelPlacement: "above-center",
+        labelExpressionInfo: {
+          expression: "$feature.Fac_Name"
+        }
+      };
+
       const usaairportLayer = new FeatureLayer({
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_lab2/FeatureServer",
         outFields: ["Site_Num", "Fac_Name","Region_Cod"],
         popupTemplate: popupAirportusa,
         renderer: airportRenderer,
-        definitionExpression: "Fac_Type = 'AIRPORT'"
+        definitionExpression: "Fac_Type = 'AIRPORT'",   //filter to be airport only
+        labelingInfo: [airportLabels] //adding the labels 
       });
       
       map.add(usaairportLayer);
