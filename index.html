@@ -151,14 +151,14 @@
       graphicsLayer.add(polygonGraphic);
 
       const popupEduusa = {
-        "title": "EDUs",
-        "content": "<b>Name:</b> {NAME}<br><b>Total Enrollment:</b> {TOT_ENROLL}<br>"
+        title: "EDUs",
+        content: "<b>Name:</b> {NAME}<br><b>Total Enrollment:</b> {TOT_ENROLL}<br><a href='{WEBSITE}'></a><br>"
       }
 
       const usaeduLayer = new FeatureLayer({
         url: "https://services2.arcgis.com/FiaPA4ga0iQKduv3/arcgis/rest/services/Colleges_and_Universities_View/FeatureServer",
-        outFields: ["NAME","TOT_ENROLL"],
-        popupTemplate: popupTemplate
+        outFields: ["NAME","TOT_ENROLL","WEBSITE"],
+        popupTemplate: popupEduusa
       });
       
       map.add(usaeduLayer);
