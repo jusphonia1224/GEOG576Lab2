@@ -182,7 +182,8 @@
         url: "https://services.arcgis.com/HRPe58bUyBqyyiCt/arcgis/rest/services/US_Airports_lab2/FeatureServer",
         outFields: ["Site_Num", "Fac_Name","Region_Cod"],
         popupTemplate: popupAirportusa,
-        renderer: airportRenderer
+        renderer: airportRenderer,
+        definitionExpression: "Fac_Type = 'AIRPORT'"
       });
       
       map.add(usaairportLayer);
